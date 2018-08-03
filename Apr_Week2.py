@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import string
 import re
-Business = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_business.csv")
+Business = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_business.csv")
 Cities = [set(Business['Cities'])]
 City_df = pd.DataFrame(Cities)
 City_df = pd.DataFrame(City_df.transpose())

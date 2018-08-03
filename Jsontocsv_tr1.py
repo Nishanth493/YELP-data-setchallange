@@ -1,7 +1,7 @@
 #import json
 #from pprint import pprint
 import os
-os.chdir("C:/Users/saketha lakshmi/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/")
+os.chdir("C:/Users/Nishanth/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/")
 
 with open('yelp_academic_dataset_checkin.json') as data_file:
     data = json.load(data_file)
@@ -34,8 +34,8 @@ for json_filename in glob('*.json'):
  
 ########### Read the data sets and make sure everything looks right
 
-business = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/yelp_academic_dataset_business.csv")
-checkin = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/yelp_academic_dataset_checkin.csv")
+business = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/yelp_academic_dataset_business.csv")
+checkin = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/yelp_academic_dataset_checkin.csv")
 tip = pd.read_csv("yelp_academic_dataset_tip.csv")
 user = pd.read_csv("yelp_academic_dataset_user.csv")
 review = pd.read_csv("yelp_academic_dataset_review.csv")

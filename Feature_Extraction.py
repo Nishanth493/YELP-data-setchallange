@@ -2,7 +2,7 @@
 import pandas as pd
 ### Read user data
 #User = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_user.csv")
-User_new = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/User_modified(new).csv")
+User_new = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/User_modified(new).csv")
 #### Yelping years - already there
 ### Elite years - already there
 ## Fans - already present 
@@ -28,7 +28,7 @@ def elite_timetaken(x):
 User_new['Elite_timetaken'] = [elite_timetaken(x) for x in range(len(User_new))]
 
 ##================= Read review data (withhout text) ===================#
-Rev = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Review_wotext.csv")
+Rev = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Review_wotext.csv")
 Rev.columns.values
 Rev = Rev[Rev['funny'] != 'aZs_IrhA7rvuLBumVhJjCw'] ## Cleaning it up
 #### Average stars per user
@@ -102,7 +102,7 @@ mm8 = mm8.fillna(0)
 Rev = Rev.merge(mm8, how = 'left', on = 'user_id')
 Rev = Rev.merge(Rev_b, how = 'left', on = 'user_id')
 ## ==================Read business data =========================#
-Bussiness = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Business_CityAtt.csv")
+Bussiness = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Business_CityAtt.csv")
 Bus_sub = Bussiness[['business_id','postal_code','city','state']]
 Bus_sub.columns = ['business_id_x','postal_code','city','state']
 ### Merge with above rev data
@@ -128,7 +128,7 @@ Bus2 = Bus1.merge(Tot_cities, on = 'user_id', how = 'left')
 Review_Business = Bus2.merge(Tot_state, on = 'user_id', how = 'left')
 
 ##====================Read Tips data =================================##
-tips = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_tip.csv")
+tips = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_tip.csv")
 tips.head()
 ### Count of total tips created per user
 Total_tips = tips.groupby(['user_id']).size()
@@ -163,7 +163,7 @@ len(RBU_1)
 RBUT = RBU_1.merge(tip2, on = 'user_id', how = 'left')
 RBUT.head()
 RBUT.tail()
-RBUT= pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Wed_alldata.csv")
+RBUT= pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Wed_alldata.csv")
 ### Drop unnecessary columns
 def elite(x):
     if RBUT['elite'][x] == 'None':
@@ -185,8 +185,8 @@ del FinalData['index']
 
 ###Save the final file
 FinalData = FinalData.rename(columns = {'stars_y':'avg_stars','funny_y':'funny_review','useful_y':'useful_review','cool_y':'cool_review','business_id_y':'bus_type_review','business_id':'bus_type_tip'})
-FinalData.to_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Wed_cleandata_v2.csv")
-FinalData=pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Wed_cleandata_v2.csv")
+FinalData.to_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Wed_cleandata_v2.csv")
+FinalData=pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Wed_cleandata_v2.csv")
 
 ##======================= Training and Testing Split ============================#
 import random
@@ -195,8 +195,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import tree
 random.seed(100)
 Train, Test = train_test_split(FinalData, test_size=0.2, random_state=0)
-Train.to_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Wed_Train_v2.csv")
-Test.to_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Wed_Test_v2.csv")
+Train.to_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Wed_Train_v2.csv")
+Test.to_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Wed_Test_v2.csv")
 Y_train = Train.Response
 Y_test = Test.Response
 X_train = Train.ix[:,0:36]

@@ -6,7 +6,7 @@ import argparse
 import collections
 import csv
 import simplejson as json
-#'C:/Users/saketha lakshmi/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/yelp_academic_dataset_checkin.json'
+#'C:/Users/Nishanth/Documents/IEOR242/Project/yelp_dataset_challenge_round9/yelp_dataset_challenge_round9~/yelp_academic_dataset_checkin.json'
 
 def read_and_write_file(json_file_path, csv_file_path, column_names):
     """Read in the json dataset file and write it out to a csv file, given the column names."""

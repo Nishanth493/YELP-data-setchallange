@@ -2,10 +2,10 @@
 #### Trying to convert Attributes section of Business data into separate columns 
 import pandas as pd
 import numpy as np
-Business = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_business.csv")
+Business = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_business.csv")
 from itertools import izip_longest
 new_cols = Business(list(izip_longest(Business[1].apply(lambda x:x.split(",")), fillvalue="")))
-User = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_user.csv")
+User = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/yelp_academic_dataset_user.csv")
 
 ########## Need to make the attributes into separate columns
 import string
@@ -13,7 +13,7 @@ dictionary = []
 dictionary1 = list(set(dictionary))
 dictionary2 = list(set(dictionary1))
 dictionary2_df = pd.DataFrame(dictionary2)
-dictionary2_df = pd.read_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Dict_Attribute.csv")
+dictionary2_df = pd.read_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Dict_Attribute.csv")
 dictionary2 = dictionary2_df['0']
 for i in range(140852,len(Business)):
     print(i)
@@ -44,7 +44,7 @@ for i in range(122533, len(Business)):
     
                 
             
-Attribute.to_csv("C:/Users/saketha lakshmi/Documents/IEOR242/Project/DataSets/Attribute4.csv")       
+Attribute.to_csv("C:/Users/Nishanth/Documents/IEOR242/Project/DataSets/Attribute4.csv")
 
 
 
