@@ -3,8 +3,6 @@ YELP! data set challange
 All the data sets can be downloaded through this link
 https://www.yelp.com/dataset
 
-
-Dataset: Credit-Union customers dataset 
 Objective: 
 - Determine the rating of a business
 - Improve the rating of a business 
